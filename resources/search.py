@@ -10,28 +10,28 @@ blp = Blueprint("search", __name__, description = "Search related functions")
 class SearchByCityName(MethodView):
     @blp.response(200, DataSchema)
     def get(self, name):
-        details = DataModel.query.filter(func.lower(DataModel.city) == func.lower(name)).first()
+        data = DataModel.query.filter(func.lower(DataModel.city) == func.lower(name)).first()
     
-        if not details:
+        if not data:
             abort(404, message=f"No data found for city {name}")
         
-        return details
+        return data
        
 @blp.route("/city/<int:id>")
 class SearchById(MethodView):
     @blp.response(200, DataSchema)
     def get(self, id):
-        details = DataModel.query.get_or_404(id)
+        data = DataModel.query.get_or_404(id)
         
-        return details
+        return data
         
 @blp.route("/country/<string:name>")
 class SearchByCountryName(MethodView):
     @blp.response(200, DataSchema(many=True))
     def get(self, name):
-        details = DataModel.query.filter(func.lower(DataModel.country) == func.lower(name)).all()
+        data = DataModel.query.filter(func.lower(DataModel.country) == func.lower(name)).all()
 
-        if not details:
+        if not data:
             abort(404, message=f"No data found for country {name}")
                 
-        return details
+        return data

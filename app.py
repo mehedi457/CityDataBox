@@ -2,10 +2,9 @@ from flask import Flask
 from flask_smorest import Api
 import os
 from db import db
-from resources.data import blp as DataBlueprint
+from resources.city import blp as DataBlueprint
 from resources.search import blp as SearchBlueprint
 from flask_migrate import Migrate
-
 
 def create_app():
     app = Flask(__name__)
@@ -26,12 +25,7 @@ def create_app():
     api.register_blueprint(DataBlueprint)
     api.register_blueprint(SearchBlueprint)
 
-    if __name__ == "__main__":
-        app.run()
-
     return app
-
-create_app()
 
 
 
