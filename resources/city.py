@@ -1,12 +1,11 @@
 from flask.views import MethodView
 from flask_smorest import Blueprint, abort
 from models import DataModel
-from schemas import DataSchema
+from schemas import DataSchema, DataListSchema
 from db import db
 from sqlalchemy.exc import SQLAlchemyError
 
-
-blp = Blueprint("data", __name__, description = "Data related functions")
+blp = Blueprint("data", __name__, description = " ")
 
 @blp.route("/city/all")
 class CityList(MethodView):
@@ -21,6 +20,16 @@ class CityList(MethodView):
         db.session.commit()
         return {"message" : "Data Deleted"}
 
+    @blp.arguments(DataListSchema)
+    def post(self, data):
+        try:
+            for d in data["cities"]:
+                data = DataModel(**d)
+                db.session.add(data)
+            db.session.commit()
+            return {"message" : "Succefully added"}
+        except SQLAlchemyError as e:
+            abort(500, message=f"{e}")
 
 @blp.route("/city")
 class City(MethodView):

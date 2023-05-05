@@ -10,17 +10,17 @@ def create_app():
     app = Flask(__name__)
 
     app.config["PROPAGATE_EXCEPTIONS"] = True
-    app.config["API_TITLE"] = "MY First Rest API"
+    app.config["API_TITLE"] = "CityDataBox"
     app.config["API_VERSION"] = "V1.0"
     app.config["OPENAPI_VERSION"] = "3.0.3"
     app.config["OPENAPI_URL_PREFIX"] = "/"
     app.config["SQLALCHEMY_DATABASE_URI"] = os.getenv("DATABASE_URL", "sqlite:///city.db")
     app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
-    db.init_app(app=app)
+    db.init_app(app)
 
     migrate = Migrate(app, db)
 
-    api = Api(app=app)
+    api = Api(app)
 
     api.register_blueprint(DataBlueprint)
     api.register_blueprint(SearchBlueprint)

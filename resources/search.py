@@ -4,7 +4,7 @@ from models import DataModel
 from schemas import DataSchema
 from sqlalchemy import func
 
-blp = Blueprint("search", __name__, description = "Search related functions")
+blp = Blueprint("search", __name__, description = " ")
 
 @blp.route("/city/<string:name>")
 class SearchByCityName(MethodView):

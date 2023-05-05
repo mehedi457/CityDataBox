@@ -1,8 +1,8 @@
 """empty message
 
-Revision ID: fa4d8f8dc301
+Revision ID: e792a0fedcd2
 Revises: 
-Create Date: 2023-05-03 22:39:23.355842
+Create Date: 2023-05-05 22:59:15.686594
 
 """
 from alembic import op
@@ -10,7 +10,7 @@ import sqlalchemy as sa
 
 
 # revision identifiers, used by Alembic.
-revision = 'fa4d8f8dc301'
+revision = 'e792a0fedcd2'
 down_revision = None
 branch_labels = None
 depends_on = None
@@ -22,16 +22,15 @@ def upgrade():
     sa.Column('id', sa.Integer(), nullable=False),
     sa.Column('city', sa.String(length=80), nullable=False),
     sa.Column('city_ascii', sa.String(length=80), nullable=False),
-    sa.Column('lat', sa.Float(precision=4), nullable=False),
-    sa.Column('lng', sa.Float(precision=4), nullable=False),
+    sa.Column('lat', sa.String(length=80), nullable=False),
+    sa.Column('lng', sa.String(length=80), nullable=False),
     sa.Column('country', sa.String(length=80), nullable=False),
     sa.Column('iso2', sa.String(length=80), nullable=False),
     sa.Column('iso3', sa.String(length=80), nullable=False),
     sa.Column('admin_name', sa.String(length=80), nullable=False),
     sa.Column('capital', sa.String(length=80), nullable=False),
-    sa.Column('population', sa.Integer(), nullable=False),
-    sa.PrimaryKeyConstraint('id'),
-    sa.UniqueConstraint('city')
+    sa.Column('population', sa.String(length=80), nullable=False),
+    sa.PrimaryKeyConstraint('id')
     )
     # ### end Alembic commands ###
 
