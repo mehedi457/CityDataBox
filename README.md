@@ -7,10 +7,14 @@
 GET /city/paris
 ```
 ### This will return information about Dhaka, including its latitude, longitude, population, and more.
+
+
 ```
 GET /city/all
 ```
 ### This will return a list of cities.
+
+
 ```
 /country/spain
 ```
