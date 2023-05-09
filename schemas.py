@@ -21,6 +21,7 @@ class PageSchema(Schema):
     page = fields.Int(dump_only=True)
     total_pages = fields.Int(dump_only=True)
     total_data =  fields.Int(dump_only=True)
+    next = fields.Str(dump_only=True)
 
 class UserSchema(Schema):
     id= fields.Int(dump_only=True)
