@@ -39,6 +39,10 @@ class SearchByCountryName(MethodView):
                     'total_pages': data.pages,
                     'total_data': data.total
                     }
+
+        if data.has_next:
+            next_url = request.base_url + '?page=' + str(data.next_num)
+            result['next'] = next_url
         
         if result["total_data"] != 0:
             return result
@@ -59,6 +63,10 @@ class SearchByISO3(MethodView):
                     'total_data': data.total
                     }
         
+        if data.has_next:
+            next_url = request.base_url + '?page=' + str(data.next_num)
+            result['next'] = next_url
+    
         if result["total_data"] != 0:
             return result
         
@@ -77,7 +85,10 @@ class SearchByISO2(MethodView):
                     'total_pages': data.pages,
                     'total_data': data.total
                     }
-        
+        if data.has_next:
+            next_url = request.base_url + '?page=' + str(data.next_num)
+            result['next'] = next_url
+    
         if result["total_data"] != 0:
             return result
         
