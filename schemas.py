@@ -15,3 +15,15 @@ class DataSchema(Schema):
 
 class DataListSchema(Schema):
     cities = fields.List(fields.Nested(DataSchema()))
+
+class PageSchema(Schema):
+    data = fields.List(fields.Nested(DataSchema()), dump_only=True)
+    page = fields.Int(dump_only=True)
+    total_pages = fields.Int(dump_only=True)
+    total_data =  fields.Int(dump_only=True)
+
+class UserSchema(Schema):
+    id= fields.Int(dump_only=True)
+    username = fields.Str(required=True)
+    password = fields.Str(required=True, load_only=True)
+    is_admin = fields.Boolean(required=True)

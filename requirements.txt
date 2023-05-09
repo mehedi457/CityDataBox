@@ -4,3 +4,8 @@ python-dotenv
 sqlalchemy
 flask-sqlalchemy
 flask-migrate
+flask-jwt-extended
+passlib
+gunicorn
+psycopg2
+redis
