@@ -1,7 +1,7 @@
 # CityDataBox
 
 ### Simple RESTful API that provides information about cities. It is designed to be easy to use with a simple JSON-based interface that returns data in a standardized format.
-#
+
 ## API Documentation
 
 This API provides access to information about cities. The following endpoints are available:
@@ -42,7 +42,7 @@ GET /city/new york
 }
 ```
 
-### 2. Retrieve a list of all cities in the database
+### 2. Retrieve a list of cities in the database
 
 **Endpoint:** `/cities`
 
@@ -189,7 +189,7 @@ GET /city/2
 }
 ```
 
-### 5. Retrieve information about a country with the specified ISO 3166-1 alpha-3 code
+### 5. Retrieve a list of cities by a specified ISO 3166-1 alpha-3 code
 
 **Endpoint:** `/country/iso3/name`
 
@@ -247,7 +247,7 @@ GET /country/iso3/USA
 ```
 Note: The ISO 3166-1 alpha-3 code should be passed as a three-letter string in uppercase.
 
-### 6. Retrieve information about a country with the specified ISO 3166-1 alpha-2 code
+### 6. Retrieve a list of cities by a specified ISO 3166-1 alpha-2 code
 
 **Endpoint:** `/country/iso2/name`
 
