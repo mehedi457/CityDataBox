@@ -24,7 +24,7 @@ class CityList(MethodView):
             'total_data': data.total
         }
         if data.has_next:
-            next_url = request.base_url + '?page=' + str(data.next_num)
+            next_url = '?page=' + str(data.next_num)
             result['next'] = next_url
         return result
     
