@@ -89,7 +89,7 @@ GET /cities
 		}
    ...
 ],
-	"next": "base_url/cities?page=2",
+	"next": "/cities?page=2",
 	"page": 1,
 	"total_data": 44691,
 	"total_pages": 447
@@ -147,7 +147,7 @@ GET /country/spain
 		}
       ...
    ],
-   	"next": "base_url/country/spain?page=2",
+   	"next": "/country/spain?page=2",
     "page": 1,
 	"total_data": 754,
 	"total_pages": 8
@@ -241,7 +241,7 @@ GET /country/iso3/USA
 		},
       ....
 	],
-	"next": "base_url/country/iso3/USA?page=2",
+	"next": "/country/iso3/USA?page=2",
 	"page": 1,
 	"total_data": 5393,
 	"total_pages": 54
@@ -300,7 +300,7 @@ GET /country/iso2/ES
 		},
       ...
       	],
-	"next": "base_url/country/iso2/ES?page=2",
+	"next": "/country/iso2/ES?page=2",
 	"page": 1,
 	"total_data": 754,
 	"total_pages": 8
